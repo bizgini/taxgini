@@ -250,10 +250,29 @@ app_license = "mit"
 # List of apps whose translatable strings should be excluded from this app's translations.
 # ignore_translatable_strings_from = []
 
-
 fixtures = [
-    "Custom Field",
-    "Client Script",
-    "Property Setter"
+    # Custom DocTypes in your app
+    {"dt": "DocType", "filters": {"module": "Tax Gini"}},
+
+    # Custom fields added via the UI
+    {"dt": "Custom Field", "filters": {"module": "Tax Gini"}},
+
+    # Client Scripts (Frappe 16 replacement for Custom Script)
+    {"dt": "Client Script", "filters": {"module": "Tax Gini"}},
+
+    # Property Setters (field or DocType overrides)
+    {"dt": "Property Setter", "filters": {"module": "Tax Gini"}},
+
+    # Print Formats (optional, for invoices, reports, etc.)
+    {"dt": "Print Format", "filters": {"module": "Tax Gini"}},
+
+    # Reports created in your module
+    {"dt": "Report", "filters": {"module": "Tax Gini"}},
+
+    # Optional: Custom Roles, Permissions, or Workflows if you have them
+    {"dt": "Workflow", "filters": {"module": "Tax Gini"}},
+    {"dt": "Workflow State", "filters": {"module": "Tax Gini"}},
+    {"dt": "Workflow Action", "filters": {"module": "Tax Gini"}},
 ]
+
 
