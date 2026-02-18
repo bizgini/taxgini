@@ -250,3 +250,13 @@ app_license = "mit"
 # List of apps whose translatable strings should be excluded from this app's translations.
 # ignore_translatable_strings_from = []
 
+
+add_to_apps_screen = [
+    {
+        "name": "taxgini",
+        "logo": "/assets/erpnext/images/erpnext-logo.svg",
+        "title": "Tax Gini",
+        "route": "/app"
+    }
+]
+
