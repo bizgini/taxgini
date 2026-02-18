@@ -1,0 +1,28 @@
+[
+ {
+  "calculation_basis": "Percentage",
+  "description": null,
+  "docstatus": 0,
+  "doctype": "Tax Definiations",
+  "modified": "2026-02-17 21:04:50.218058",
+  "name": "UAE-VAT",
+  "tax_authority": "UAE-FTA",
+  "tax_basis": "Net Sales / Revenue",
+  "tax_country": "United Arab Emirates",
+  "tax_id": "UAE-VAT",
+  "tax_name": "VAT"
+ },
+ {
+  "calculation_basis": "Tax Slab",
+  "description": null,
+  "docstatus": 0,
+  "doctype": "Tax Definiations",
+  "modified": "2026-02-17 21:05:30.623643",
+  "name": "UAE-CT",
+  "tax_authority": "UAE-FTA",
+  "tax_basis": "Net Profit / Income",
+  "tax_country": "United Arab Emirates",
+  "tax_id": "UAE-CT",
+  "tax_name": "Corporate Tax"
+ }
+]
