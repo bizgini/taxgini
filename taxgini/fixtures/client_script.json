@@ -1,0 +1,24 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Tax Applicability",
+  "enabled": 1,
+  "modified": "2026-02-18 07:44:14.122265",
+  "module": "Tax Gini",
+  "name": "Tax Settings in Tax Applicability",
+  "script": "frappe.ui.form.on('Tax Applicability', {\r\n\r\n    refresh: function(frm) {\r\n        toggle_sections(frm);\r\n    },\r\n\r\n    tax_country: function(frm) {\r\n        load_taxes(frm);\r\n    }\r\n});\r\nconst VAT_TAXES = [\"UAE-VAT\"];\r\nconst CT_TAXES = [\"UAE-CT\"];\r\n\r\nfunction toggle_sections(frm) {\r\n\r\n    let vat_enabled = false;\r\n    let ct_enabled = false;\r\n\r\n    (frm.doc.table_eeln || []).forEach(function(row) {\r\n\r\n        if (VAT_TAXES.includes(row.tax_name) && row.applicable) {\r\n            vat_enabled = true;\r\n        }\r\n\r\n        if (CT_TAXES.includes(row.tax_name) && row.applicable) {\r\n            ct_enabled = true;\r\n        }\r\n    });\r\n\r\n    frm.toggle_display(\"uae_vat_section\", vat_enabled);\r\n    frm.toggle_display(\"section_break_cgss\", ct_enabled);\r\n}\r\n",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Tax Applicability",
+  "enabled": 1,
+  "modified": "2026-02-18 07:49:06.045260",
+  "module": "Tax Gini",
+  "name": "Tax Selection in Applicable Tax",
+  "script": "frappe.ui.form.on('Applicable Taxes', {\r\n\r\n    applicable: function(frm, cdt, cdn) {\r\n\r\n        let row = locals[cdt][cdn];\r\n\r\n        // Clear fields if unchecked\r\n        if (!row.applicable) {\r\n            frappe.model.set_value(cdt, cdn, \"tax_basis\", \"\");\r\n            frappe.model.set_value(cdt, cdn, \"calculation_basis\", \"\");\r\n        }\r\n\r\n        // IMPORTANT: trigger parent section toggle immediately\r\n        toggle_sections(frm);\r\n    }\r\n});\r\n",
+  "view": "Form"
+ }
+]

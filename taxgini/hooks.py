@@ -251,12 +251,9 @@ app_license = "mit"
 # ignore_translatable_strings_from = []
 
 
-add_to_apps_screen = [
-    {
-        "name": "taxgini",
-        "logo": "/assets/erpnext/images/erpnext-logo.svg",
-        "title": "Tax Gini",
-        "route": "/app"
-    }
+fixtures = [
+    "Custom Field",
+    "Client Script",
+    "Property Setter"
 ]
 
